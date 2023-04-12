@@ -8,4 +8,3 @@ while len(kids) > 1:
     print(f"Removed {kids.pop()}")
 
 print(f"Last is {kids.popleft()}")
-
