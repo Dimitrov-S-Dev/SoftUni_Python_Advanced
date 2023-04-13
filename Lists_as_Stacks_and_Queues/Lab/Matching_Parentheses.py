@@ -7,4 +7,3 @@ for index in range(len(expression)):
     elif expression[index] == ")":
         start_index = par_stack.pop()
         print(expression[start_index: index + 1])
-
