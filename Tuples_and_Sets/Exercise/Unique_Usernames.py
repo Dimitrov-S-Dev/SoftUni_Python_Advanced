@@ -1,9 +1,8 @@
 n = int(input())
 usernames = set()
 
-for i in range(n):
+for _ in range(n):
     username = input()
     usernames.add(username)
 
-for username in usernames:
-    print(username)
+print(*usernames,sep="\n")
