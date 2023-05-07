@@ -1,7 +1,6 @@
-text = input()
 symbols_dict = {}
 
-for elem in text:
+for elem in input():
     if elem not in symbols_dict.keys():
         symbols_dict[elem] = 0
     symbols_dict[elem] += 1
