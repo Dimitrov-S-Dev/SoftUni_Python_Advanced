@@ -6,10 +6,19 @@
 #
 # print(*elements, sep="\n")
 
-elements = set()
+# elements = set()
+#
+# for _ in range(int(input())):
+#     for elem in input().split():
+#         elements.add(elem)
+#
+# print(*elements, sep="\n")
+
+elements = []
 
 for _ in range(int(input())):
-    for elem in input().split():
-        elements.add(elem)
+    elements.extend(input().split())
 
-print(*elements, sep="\n")
+print("\n".join(set(elements)))
+
+
