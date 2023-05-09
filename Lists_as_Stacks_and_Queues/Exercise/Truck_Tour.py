@@ -1,5 +1,6 @@
 from collections import deque
-#
+
+
 # pumps_data = deque([[int(x) for x in input().split()] for _ in range(int(input()))])
 #
 # pumps_data_copy = pumps_data.copy()
