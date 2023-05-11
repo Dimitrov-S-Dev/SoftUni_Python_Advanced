@@ -24,4 +24,3 @@ result = get_sum_columns(matrix)
 
 for res in result:
     print(res)
-
