@@ -1,7 +1,9 @@
 number_of_rows = int(input())
-result = []
+matrix = []
 
 for _ in range(number_of_rows):
-    [result.append(int(x)) for x in input().split(", ")]
+    curr_row = [int(x) for x in input().split(", ")]
+    matrix.append(curr_row)
 
+result = [num for row in matrix for num in row]
 print(result)

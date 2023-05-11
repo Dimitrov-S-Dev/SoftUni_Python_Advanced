@@ -16,5 +16,3 @@ for elem in matrix:
 
 print(sum_matrix)
 print(matrix)
-
-
