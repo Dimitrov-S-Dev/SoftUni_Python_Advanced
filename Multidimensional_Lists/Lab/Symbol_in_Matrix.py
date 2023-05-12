@@ -1,20 +1,14 @@
 n = int(input())
 
-matrix = []
-
-for row in range(n):
-    curr_row = list(input())
-    matrix.append(curr_row)
+matrix = [list(input()) for _ in range(n)]
 
 sbl = input()
-inx = []
-for i in range(len(matrix)):
-    for j in range(len(matrix[0])):
-        if matrix[i][j] == sbl:
-            inx.append((i, j))
+is_found = False
+for row_index in range(n):
+    for column_index in range(n):
+        if matrix[row_index][column_index] == sbl:
+            is_found = True
+            print(f"({row_index}, {column_index})")
 
-if inx:
-    for symbol in inx:
-        print(symbol)
-else:
+if not is_found:
     print(f"{sbl} does not occur in the matrix")
