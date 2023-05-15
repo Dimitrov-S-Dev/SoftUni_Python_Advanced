@@ -1,6 +1,5 @@
 from collections import deque
 
-
 # pumps_data = deque([[int(x) for x in input().split()] for _ in range(int(input()))])
 #
 # pumps_data_copy = pumps_data.copy()
@@ -30,7 +29,7 @@ for attempt in range(pumps_count):
         trunk += petrol + trunk - distance
 
         if trunk < 0:
-            flag = True
+            failed = True
             break
     if failed:
         pumps.append(pumps.popleft())
