@@ -9,6 +9,6 @@ for _ in range(int(input())):
     if len(intersection) > len(longest_intersection):
         longest_intersection = intersection
 
-print(f"Longest intersection is"
+print(f"Longest intersection is "
       f"[{','.join(str(x) for x in longest_intersection)}]"
-      f"with length {len(longest_intersection)}")
+      f" with length {len(longest_intersection)}")
