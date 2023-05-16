@@ -1,7 +1,7 @@
 from collections import deque
 
 words = deque(input().split())
-colors = {"red", "yellow", "blue", "orange", "purple", "blue"}
+colors = {"red", "yellow", "blue", "orange", "purple", "green"}
 req_colors = {
     "orange": {"red", "yellow"},
     "purple": {"red", "blue"},
