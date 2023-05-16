@@ -9,8 +9,8 @@ total_honey = 0
 operations = {
     "*": lambda x, y: x * y,
     "/": lambda x, y: x / y,
-    "-": lambda x, y: x - y,
     "+": lambda x, y: x + y,
+    "-": lambda x, y: x - y,
 }
 
 while bees and nectar:
