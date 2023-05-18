@@ -11,5 +11,4 @@ for i in range(size):
     sum_p_diagonal += matrix[i][i]
     sum_s_diagonal += matrix[i][size - i - 1]
 
-diff = sum_p_diagonal - sum_s_diagonal
-print(abs(diff))
+print(f"{abs(sum_p_diagonal - sum_s_diagonal)}")
