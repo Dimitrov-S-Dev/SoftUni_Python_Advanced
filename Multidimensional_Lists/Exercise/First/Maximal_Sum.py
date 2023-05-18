@@ -49,4 +49,3 @@ for row in range(rows - 2):
 print(f"Sum = {max_sum}")
 for row in max_sum_matrix:
     print(*row, sep=" ")
-
