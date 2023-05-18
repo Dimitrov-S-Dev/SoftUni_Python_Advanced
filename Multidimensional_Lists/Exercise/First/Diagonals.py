@@ -1,17 +1,17 @@
-n = int(input())
+size = int(input())
 matrix = []
 p_diagonal = []
 s_diagonal = []
 
-for _ in range(n):
+for _ in range(size):
     curr_row = [int(x) for x in input().split(", ")]
     matrix.append(curr_row)
 
-for i in range(n):
-    for j in range(n):
+for i in range(size):
+    for j in range(size):
         if i == j:
             p_diagonal.append(matrix[i][j])
-        if i + j == n - 1:
+        if i + j == size - 1:
             s_diagonal.append(matrix[i][j])
 
 print(f"Primary diagonal: {', '.join(str(x) for x in p_diagonal)}. "
