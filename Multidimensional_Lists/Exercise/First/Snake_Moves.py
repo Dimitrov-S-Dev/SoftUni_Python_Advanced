@@ -3,7 +3,7 @@ word = input()
 index = 0
 
 for row in range(rows):
-    element = ["None"] * columns
+    element = [None] * columns
     if row % 2 == 0:
         for col in range(columns):
             element[col] = word[index % len(word)]
