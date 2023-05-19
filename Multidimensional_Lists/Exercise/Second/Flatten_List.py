@@ -5,4 +5,3 @@ for index in range(len(elements) - 1, -1, -1):
     result.extend(curr_element)
 print(" ".join(result))
 
-
