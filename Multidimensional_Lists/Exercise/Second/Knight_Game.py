@@ -7,11 +7,12 @@ def fount_count(matrix, row, col):
         [row + 1, col - 2],
         [row + 1, col + 2],
         [row + 2, col - 1],
-        [row + 2, col + 1]
+        [row + 2, col + 1],
     ]
     result = 0
     for r, c in moves:
-        if r in range(len(matrix)) and c in range(len(matrix)) and matrix[r][c] == "K":
+        if r in range(len(matrix)) \
+                and c in range(len(matrix)) and matrix[r][c] == "K":
             result += 1
 
     return result
