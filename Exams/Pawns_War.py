@@ -1,46 +1,79 @@
-def check_range(board, first_row, other_row):
-    return abs(first_row - other_row) == 1
+def get_white_range(matrix, row, col):
+    ranges = {
+        (row + 1, col - 1),
+        (row + 1, col + 1),
+    }
+    for r, c in ranges:
+        if r in range(8) and c in range(8) and matrix[r][c] == "w":
+            return True
+    return False
 
 
-def get_player_position(board, symbol):
-    for row in range(ROWS_COUNT):
-        for col in range(COLS_COUNT):
-            if board[row][col] == symbol:
-                return row, col
+def get_black_range(matrix, row, col):
+    ranges = {
+        (row - 1, col - 1),
+        (row - 1, col + 1),
+    }
+    for r, c in ranges:
+        if r in range(8) and c in range(8) and matrix[r][c] == "b":
+            return True
+    return False
 
 
-ROWS_COUNT = 8
-COLS_COUNT = 8
+# Step 1: Read the data and create the board
+board = []
+for _ in range(8):
+    row_data = input().split()
+    board.append(row_data)
 
-matrix = [input().split() for _ in range(ROWS_COUNT)]
-
-wr, wc = get_player_position(matrix, "w")
-br, bc = get_player_position(matrix, "b")
+# Step 2: Initialize the positions and their names
+white_position = 0, 0
+black_position = 0, 0
 cols = ["a", "b", "c", "d", "e", "f", "g", "h"]
 rows = [8, 7, 6, 5, 4, 3, 2, 1]
 
+# Step 3: Find positions
+for i in range(8):
+    for j in range(8):
+        if board[i][j] == "w":
+            white_position = (i, j)
+        elif board[i][j] == "b":
+            black_position = (i, j)
+
+# Step 4: Initialize movements
 movements = {
     "white": lambda r, c: (r - 1, c),
     "black": lambda r, c: (r + 1, c),
 }
 
-game_over = False
+# Step 5: Main Loop
+wr, wc = white_position
+br, bc = black_position
 
-if abs(wc - bc) == 1:
-    if check_range(matrix, wc, bc):
-        if wr < br:
-            print(f"Game over! White win, capture on {cols[wc]}{rows[wr]}.")
-        else:
-            print(f"Game over! Black win, capture on {cols[bc]}{rows[br]}.")
-        game_over = True
 
-while not game_over:
-    wr, wc = movements["white"](wr, wc)
-    if wr == 0:
-        print(f"Game over! White pawn is promoted to a queen at {cols[wc]}{rows[wr]}.")
-        break
-    br, bc = movements["black"](br, bc)
-    if br == 7:
-        print(f"Game over! Black pawn is promoted to a queen at {cols[bc]}{rows[br]}.")
-        break
+while True:
+    if abs(wc - bc) == 1:
+        if get_white_range(board, br, bc):
+            print(f"Game over! White win, capture on {cols[bc]}{rows[br]}.")
+            break
+
+        wr, wc = movements["white"](wr, wc)
+
+        if get_black_range(board, wr, wc):
+            print(f"Game over! Black win, capture on {cols[wc]}{rows[wr]}.")
+            break
+        br, bc = movements["black"](br, bc)
+
+    else:
+
+        wr, wc = movements["white"](wr, wc)
+        if wr == 0:
+            print(f"Game over! White pawn is promoted to a queen at "
+                  f"{cols[wc]}{rows[wr]}.")
+            break
+        br, bc = movements["black"](br, bc)
+        if br == 7:
+            print(f"Game over! Black pawn is promoted to a queen at "
+                  f"{cols[bc]}{rows[br]}.")
+            break
 
