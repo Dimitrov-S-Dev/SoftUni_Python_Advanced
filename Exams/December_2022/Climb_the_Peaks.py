@@ -4,37 +4,35 @@ from collections import deque
 food = deque(int(x) for x in input().split(", "))
 stamina = deque(int(x) for x in input().split(", "))
 # Initializing the Peaks and Difficulty
-peaks = {
-    "Vihren": 80,
-    "Kutelo": 90,
-    "Banski Suhodol": 100,
-    "Polezhan": 60,
-    "Kamenitza": 70,
-    }
+peaks = deque([
+    ["Vihren", 80],
+    ["Kutelo", 90],
+    ["Banski Suhodol", 100],
+    ["Polezhan", 60],
+    ["Kamenitza", 70],
+])
 conquered_peaks = []
 failed_condition = False
-day = 0
-for key, value in peaks.items():
-    while food and stamina:
-        day += 1
-        daily_sum = food.pop() + stamina.popleft()
-        if daily_sum >= value and day <= 7:
-            conquered_peaks.append(key)
-            break
-        if day >= 7:
-            failed_condition = True
-            break
-    if failed_condition:
+day = 1
+
+while True:
+    if len(conquered_peaks) == 5:
+        print(f"Alex did it! He climbed all top five Pirin peaks "
+              f"in one week -> @FIVEinAWEEK")
+        break
+    if not food or day > 7:
+        print(f"Alex failed! He has to organize his "
+              "journey better next time -> @PIRINWINS")
         break
 
-if failed_condition:
-    print(f"Alex failed! He has to organize his "
-          "journey better next time -> @PIRINWINS")
-else:
-    print(f"Alex did it! He climbed all top five Pirin peaks "
-          f"in one week -> @FIVEinAWEEK")
+    daily_sum = food.pop() + stamina.popleft()
+    name, value = peaks.popleft()
+    if daily_sum >= value:
+        conquered_peaks.append(name)
+    else:
+        peaks.appendleft([name, value])
+    day += 1
 
 if conquered_peaks:
     print("Conquered peaks:")
-    while conquered_peaks:
-        print(conquered_peaks.pop(0))
+    [print(x) for x in conquered_peaks]
