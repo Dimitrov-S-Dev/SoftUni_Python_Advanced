@@ -1,40 +1,40 @@
 from collections import deque
+
 # read the input data
-daily_portions = deque(int(x) for x in input().split(", "))
-daily_stamina = deque(int(x) for x in input().split(", "))
-
+food = deque(int(x) for x in input().split(", "))
+stamina = deque(int(x) for x in input().split(", "))
 # Initializing the Peaks and Difficulty
-
-peaks = [
-    {80: "Vihren"},
-    {90: "Kutelo"},
-    {100: "Banski Suhodol"},
-    {60: "Polezhan"},
-    {70: "Kamenitza"},
-
-]
-
+peaks = {
+    "Vihren": 80,
+    "Kutelo": 90,
+    "Banski Suhodol": 100,
+    "Polezhan": 60,
+    "Kamenitza": 70,
+    }
 conquered_peaks = []
-has_manage = False
-index = 0
+failed_condition = False
+day = 0
+for key, value in peaks.items():
+    while food and stamina:
+        day += 1
+        daily_sum = food.pop() + stamina.popleft()
+        if daily_sum >= value and day <= 7:
+            conquered_peaks.append(key)
+            break
+        if day >= 7:
+            failed_condition = True
+            break
+    if failed_condition:
+        break
 
-for day in range(7):
-    curr_sum = daily_portions.pop() + daily_stamina.popleft()
-    peak = peaks[index]
-    for level, name in peak.items():
-        if curr_sum >= level:
-            conquered_peaks.append(name)
-            if len(conquered_peaks) == 5:
-                has_manage = True
-                break
-            index += 1
-
-if has_manage:
-    print("Alex did it! He climbed all top five Pirin peaks"
-          " in one week -> @FIVEinAWEEK")
-else:
-    print("Alex failed! He has to organize his "
+if failed_condition:
+    print(f"Alex failed! He has to organize his "
           "journey better next time -> @PIRINWINS")
+else:
+    print(f"Alex did it! He climbed all top five Pirin peaks "
+          f"in one week -> @FIVEinAWEEK")
+
 if conquered_peaks:
-    print(f"Conquered peaks:")
-    [print(x) for x in conquered_peaks]
+    print("Conquered peaks:")
+    while conquered_peaks:
+        print(conquered_peaks.pop(0))
