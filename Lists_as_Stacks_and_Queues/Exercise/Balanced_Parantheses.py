@@ -22,7 +22,7 @@ from collections import deque
 expression = input()
 opening_brackets = deque()
 
-pairs ={
+pairs = {
     "(": ")",
     "{": "}",
     "[": "]"
