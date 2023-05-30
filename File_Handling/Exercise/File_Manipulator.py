@@ -13,9 +13,10 @@ while True:
     elif command == "Replace":
         try:
             with open("files/info[0]", "r") as file:
-                text = file.readlines()
-            for i in range(len(text)):
-                text[i] = text[i].replace(info[1], info[2])
+                text = file.read()
+
+            text = text.replace(info[1], info[2])
+
             with open("files/info[0]", "w") as file:
                 file.write("".join(text))
         except FileNotFoundError:
