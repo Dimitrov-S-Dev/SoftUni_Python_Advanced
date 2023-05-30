@@ -1,4 +1,4 @@
-file_path = "./numbers.txt"
+file_path = "numbers.txt"
 numbers = 0
 file = open(file_path)
 for line in file:
