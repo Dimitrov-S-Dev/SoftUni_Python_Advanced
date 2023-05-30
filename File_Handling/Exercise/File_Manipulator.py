@@ -18,7 +18,7 @@ while True:
             text = text.replace(info[1], info[2])
 
             with open("files/info[0]", "w") as file:
-                file.write("".join(text))
+                file.write(text)
         except FileNotFoundError:
             print("An error occurred!")
 
