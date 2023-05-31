@@ -2,7 +2,10 @@ def check_for_win():
     player_name, player_symbol = players[0]
     size = len(board)
 
-    first_diagonal = all([board[i][i] == player_symbol for i in range(size)])
+    first_diagonal_win = all([board[i][i] == player_symbol for i in range(size)])
+    second_diagonal_win = all([board[i][size - i - 1] == player_symbol for i in range(size)])
+    row_win = any([all(True if pos == player_symbol else False for pos in row)for row in board])
+    col_win = any([all(True if board[r][c] == player_symbol else False for r in range(size))for c in range(size)])
 
 
 def place_symbol(position):
