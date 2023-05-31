@@ -56,9 +56,3 @@ while True:
             raise SystemExit
 
     turn.append(turn.popleft())
-
-
-
-
-
-
