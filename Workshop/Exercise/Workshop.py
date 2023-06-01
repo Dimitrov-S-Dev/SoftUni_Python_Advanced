@@ -27,7 +27,7 @@ def place_symbol(position):
 
 def choose_position():
     while True:
-        position = input(f"{players[0][0]} choose a free position [1-9]: ")
+        position = input(f"{players[0][0]} choose a position [1-9]: ")
 
         if any([True if position in row else False for row in board]):
             break
