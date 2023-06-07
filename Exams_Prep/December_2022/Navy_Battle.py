@@ -22,12 +22,14 @@ movements = {
     "left": lambda x, y: (x, y - 1),
     "right": lambda x, y: (x, y + 1),
 }
+# Step 4: Create the variables
 
-# Step 4: Main Loop
 start_row, start_col = start_position
 matrix[start_row][start_col] = "-"
 mine_count = 0
 cruiser_count = 0
+
+# Step 5: Main Loop
 
 while True:
     command = input()

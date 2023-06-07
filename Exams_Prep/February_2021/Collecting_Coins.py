@@ -59,4 +59,3 @@ while True:
 
 print("Your path:")
 [print(path) for path in paths]
-
