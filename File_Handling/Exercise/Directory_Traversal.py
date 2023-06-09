@@ -1,7 +1,7 @@
 import os
 
 
-def save_extensions(dir_name, first_level = False):
+def save_extensions(dir_name, first_level=False):
     for file_name in os.listdir(dir_name):
         file = os.path.join(dir_name, file_name)
 
