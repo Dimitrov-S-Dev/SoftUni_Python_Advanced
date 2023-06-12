@@ -20,7 +20,6 @@ for row in range(6):
 
 # Main loop
 current_row, current_col = rover_position
-is_broken = False
 suitable = set()
 
 for command in commands_list:
@@ -40,7 +39,6 @@ for command in commands_list:
 
     elif field[new_r][new_c] == "R":
         print(f"Rover got broken at {(new_r, new_c)}")
-        is_broken = True
         break
 
 
