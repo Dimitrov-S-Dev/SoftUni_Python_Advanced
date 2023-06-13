@@ -1,48 +1,49 @@
-# Read the field and commands
-field = [input().split() for _ in range(6)]
-commands_list = input().split(", ")
+SIZE = 6
+matrix = []
+start_row, start_col = (0, 0)
 
-# Initialize command move
-commands_map = {
-    "up": lambda r, c: ((r - 1 if r - 1 in range(6) else 5), c),
-    "down": lambda r, c: ((r + 1 if r + 1 in range(6) else 0), c),
-    "left": lambda r, c: (r, (c - 1 if c - 1 in range(6) else 5)),
-    "right": lambda r, c: (r, (c + 1 if c + 1 in range(6) else 0)),
+for _ in range(SIZE):
+    curr_row = input().split()
+    matrix.append(curr_row)
+
+for i in range(SIZE):
+    for j in range(SIZE):
+        if matrix[i][j] == "E":
+            start_row, start_col = (i, j)
+
+
+commands = input().split(", ")
+
+directions = {
+    "up": lambda x, y: ((x - 1 if x - 1 in range(SIZE) else 5), y),
+    "down": lambda x, y: ((x + 1 if x + 1 in range(SIZE) else 0), y),
+    "left": lambda x, y: (x, (y - 1 if y - 1 in range(SIZE) else 5)),
+    "right": lambda x, y: (x, (y + 1 if y + 1 in range(SIZE) else 0)),
 }
 
-# Finding the rover and other position
-rover_position = 0, 0
+print_deposits = {
+    "W": "Water deposit found at",
+    "M": "Metal deposit found at",
+    "C": "Concrete deposit found at",
+}
+deposits = set()
 
-for row in range(6):
-    for col in range(6):
-        if field[row][col] == "E":
-            rover_position = (row, col)
+for command in commands:
+    new_row, new_col = directions[command](start_row, start_col)
 
-# Main loop
-current_row, current_col = rover_position
-suitable = set()
-
-for command in commands_list:
-    new_r, new_c = commands_map[command](current_row, current_col)
-    current_row, current_col = new_r, new_c
-    if field[new_r][new_c] == "W":
-        suitable.add("W")
-        print(f"Water deposit found at {(new_r, new_c)}")
-
-    elif field[new_r][new_c] == "M":
-        suitable.add("M")
-        print(f"Metal deposit found at {(new_r, new_c)}")
-
-    elif field[new_r][new_c] == "C":
-        suitable.add("C")
-        print(f"Concrete deposit found at {(new_r, new_c)}")
-
-    elif field[new_r][new_c] == "R":
-        print(f"Rover got broken at {(new_r, new_c)}")
+    if matrix[new_row][new_col] == "R":
+        print(f"Rover got broken at ({new_row}, {new_col})")
         break
 
+    elif matrix[new_row][new_col] != "-":
+        element = matrix[new_row][new_col]
+        print(f"{print_deposits[element]} ({new_row}, {new_col})")
+        deposits.add(element)
 
-if len(suitable) == 3:
+    start_row, start_col = new_row, new_col
+
+if len(deposits) == 3:
     print("Area suitable to start the colony.")
 else:
     print("Area not suitable to start the colony.")
+
