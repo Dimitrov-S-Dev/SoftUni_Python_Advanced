@@ -1,32 +1,59 @@
-def naughty_or_nice_list(santa_list, *args, **kwargs):
-    nice_list = []
-    naughty_list = []
-    not_found_list = []
+def naughty_or_nice_list(kids_lst, *args, **kwargs):
+    nice = []
+    naughty = []
+    not_found = []
 
-    for count, name in santa_list:
-        count_occurrences = sum(1 for c, _ in santa_list if c == count)
-        name_occurrences = sum(1 for _, n in santa_list if n == name)
+    for number, name in kids_lst:
+        number_count = sum(1 for num, _ in kids_lst if num == number)
+        name_count = sum(1 for _, n in kids_lst if n == name)
 
-        if f'{count}-Naughty' in args and count_occurrences == 1:
-            naughty_list.append(name)
-            santa_list = [(c, n) for c, n in santa_list if n != name]
-        elif f'{count}-Nice' in args and count_occurrences == 1:
-            nice_list.append(name)
-            santa_list = [(c, n) for c, n in santa_list if n != name]
-        elif name in kwargs and name_occurrences == 1:
+        if f'{number}-Naughty' in args and number_count == 1:
+            naughty.append(name)
+
+        elif f'{number}-Nice' in args and number_count == 1:
+            nice.append(name)
+
+        elif name in kwargs and name_count == 1:
+
             if kwargs[name] == 'Naughty':
-                naughty_list.append(name)
-                santa_list = [(c, n) for c, n in santa_list if n != name]
+                naughty.append(name)
+
             elif kwargs[name] == 'Nice':
-                nice_list.append(name)
-                santa_list = [(c, n) for c, n in santa_list if n != name]
+                nice.append(name)
+
         else:
-            not_found_list.append(name)
+            not_found.append(name)
 
-    nice_output = "Nice: " + ", ".join(nice_list) if nice_list else ""
-    naughty_output = "Naughty: " + ", ".join(naughty_list) if naughty_list else ""
-    not_found_output = "Not found: " + ", ".join(not_found_list) if not_found_list else ""
+    nice_output = f"{', '.join(nice)}"
+    naughty_output = f"{', '.join(naughty)}"
+    not_found_output = f"{', '.join(not_found)}"
 
-    output = nice_output + "\n" + naughty_output + "\n" + not_found_output
+    output = ""
+    if nice_output:
+        output += f"Nice: {nice_output}\n"
+    if naughty_output:
+        output += f"Naughty: {naughty_output}\n"
+    if not_found:
+        output += f"Not found: {not_found_output}\n"
 
     return output
+
+print(naughty_or_nice_list(
+    [
+        (6, "John"),
+        (4, "Karen"),
+        (2, "Tim"),
+        (1, "Merry"),
+        (6, "Frank"),
+    ],
+    "6-Nice",
+    "5-Naughty",
+    "4-Nice",
+    "3-Naughty",
+    "2-Nice",
+    "1-Naughty",
+    Frank="Nice",
+    Merry="Nice",
+    John="Naughty",
+))
+
