@@ -26,8 +26,9 @@ directions = {
     "left": lambda x, y: (x, y - 1),
     "right": lambda x, y: (x, y + 1),
 }
+# Task 4 Create the variables
 
-# Task 4 Main Loop
+# Task 5 Main Loop
 
 while True:
     pass
