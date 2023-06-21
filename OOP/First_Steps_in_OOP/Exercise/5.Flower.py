@@ -13,3 +13,4 @@ class Flower:
             return f"{self.name} is happy"
 
         return f"{self.name} is not happy"
+    # return f"{self.name} is {'' if self.is_happy else 'not '}happy"
