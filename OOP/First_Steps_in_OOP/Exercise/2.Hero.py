@@ -12,4 +12,3 @@ class Hero:
 
     def heal(self, amount: int):
         self.health += amount
-
