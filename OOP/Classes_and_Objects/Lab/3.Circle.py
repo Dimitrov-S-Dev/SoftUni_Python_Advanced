@@ -12,4 +12,3 @@ class Circle:
 
     def get_circumference(self) -> float:
         return Circle.pi * self.radius * 2
-
