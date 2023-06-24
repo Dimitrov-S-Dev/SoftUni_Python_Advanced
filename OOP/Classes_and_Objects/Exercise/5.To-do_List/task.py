@@ -7,7 +7,7 @@ class Task:
 
     def change_name(self, new_name: str) -> str:
         if self.name == new_name:
-            return f"Name cannot be the same"
+            return f"Name cannot be the same."
 
         self.name = new_name
         return self.name

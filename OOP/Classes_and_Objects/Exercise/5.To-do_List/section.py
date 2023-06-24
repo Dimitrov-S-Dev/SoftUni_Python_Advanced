@@ -1,17 +1,14 @@
-from task import Task
-
-
 class Section:
     def __init__(self, name: str):
         self.name = name
         self.tasks = []
 
-    def add_task(self, new_task: Task):
+    def add_task(self, new_task):
         if new_task in self.tasks:
             return f"Task is already in the section {self.name}"
 
         self.tasks.append(new_task)
-        return f"Task {new_task.details()} added to the section"
+        return f"Task {new_task.details()} is added to the section"
 
     def complete_task(self, task_name: str):
         try:
