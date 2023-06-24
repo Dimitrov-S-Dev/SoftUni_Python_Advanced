@@ -24,10 +24,9 @@ class Section:
 
     def clean_section(self):
         removed_tasks = 0
-        for task in self.tasks:
-            if task.completed:
-                self.tasks.remove(task)
-                removed_tasks += 1
+        for task in filter(lambda t: t.completed, self.tasks):
+            self.tasks.remove(task)
+            removed_tasks += 1
 
         return f"Cleared {removed_tasks} tasks."
 
