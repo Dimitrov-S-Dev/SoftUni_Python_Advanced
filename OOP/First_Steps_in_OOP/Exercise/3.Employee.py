@@ -16,4 +16,3 @@ class Employee:
     def raise_salary(self, amount: int) -> int:
         self.salary += amount
         return self.salary
-

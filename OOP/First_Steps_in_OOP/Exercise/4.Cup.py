@@ -9,4 +9,3 @@ class Cup:
 
     def status(self) -> int:
         return self.size - self.quantity
-

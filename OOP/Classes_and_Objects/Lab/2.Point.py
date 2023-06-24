@@ -11,5 +11,3 @@ class Point:
 
     def __str__(self):
         return f"The point has coordinates ({self.x},{self.y})"
-
-
