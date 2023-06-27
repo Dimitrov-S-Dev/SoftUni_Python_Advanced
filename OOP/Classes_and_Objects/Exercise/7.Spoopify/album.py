@@ -31,7 +31,7 @@ class Album:
 
         return f"Song is not in the album."
 
-    def published(self):
+    def publish(self):
         if self.published:
             return f"Album {self.name} is already published."
 
