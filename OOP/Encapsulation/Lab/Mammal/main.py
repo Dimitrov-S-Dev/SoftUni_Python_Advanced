@@ -1,9 +1,9 @@
 class Mammal:
     __kingdom = "animals"
 
-    def __init__(self, name, type, sound):
+    def __init__(self, name, animal_type, sound):
         self.name = name
-        self.type = type
+        self.type = animal_type
         self.sound = sound
 
     def make_sound(self):
