@@ -24,11 +24,10 @@ class Profile:
         has_digit = len([d for d in pass_value if d.isdigit()]) > 0
         has_min_length = len(pass_value) >= 8
 
-        if has_uppercase and has_digit and has_min_length:
-            self.__password = pass_value
-        else:
+        if not has_uppercase or not has_digit or not has_min_length:
             raise ValueError("The password must be 8 or more characters "
                              "with at least 1 digit and 1 uppercase letter.")
+        self.__password = pass_value
 
     def __str__(self):
         return f'You have a profile with username: "{self.__username}" ' \
