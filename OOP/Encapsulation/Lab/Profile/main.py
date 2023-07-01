@@ -48,4 +48,3 @@ class Profile:
     def __str__(self):
         return f'You have a profile with username: "{self.__username}" ' \
                f'and password: {"*" * len(self.__password)}'
-
