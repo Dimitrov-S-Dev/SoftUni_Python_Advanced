@@ -1,11 +1,11 @@
-from project.animal import Animal
-from project.caretaker import Caretaker
-from project.cheetah import Cheetah
-from project.keeper import Keeper
-from project.lion import Lion
-from project.tiger import Tiger
-from project.vet import Vet
-from project.worker import Worker
+from animal import Animal
+from caretaker import Caretaker
+from cheetah import Cheetah
+from keeper import Keeper
+from lion import Lion
+from tiger import Tiger
+from vet import Vet
+from worker import Worker
 
 
 class Zoo:
@@ -76,7 +76,7 @@ class Zoo:
         output += f"----- {len(tigers)} Tigers:\n" + '\n'.join(tigers) + '\n'
 
         cheetahs = [repr(a) for a in self.animals if isinstance(a, Cheetah)]
-        output += f"----- {len(cheetahs)} Cheetahs:\n" + '\n'.join(cheetahs) + '\n'
+        output += f"----- {len(cheetahs)} Cheetahs:\n" + '\n'.join(cheetahs)
 
         return output
 
