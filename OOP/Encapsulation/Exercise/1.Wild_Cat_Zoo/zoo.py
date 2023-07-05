@@ -90,7 +90,7 @@ class Zoo:
         output += f"----- {len(caretakers)} Caretakers:\n" + '\n'.join(caretakers) + '\n'
 
         vets = [repr(w) for w in self.workers if isinstance(w, Vet)]
-        output += f"----- {len(vets)} Vets:\n" + '\n'.join(vets) + '\n'
+        output += f"----- {len(vets)} Vets:\n" + '\n'.join(vets)
 
         return output
 
