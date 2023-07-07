@@ -28,6 +28,16 @@ class PhotoAlbum:
             except IndexError:
                 return f"No more free slots"
 
+        """
+        def add_photo(self, label: str):
+        for row, page in enumerate(self.photos):
+            if len(page) < PhotoAlbum.PHOTOS_PER_PAGE:
+                page.append(label)
+                return f"{label} photo added successfully on page " \
+                       f"page_number{row + 1} slot {len(page)}"
+        return f"No more free slots"
+        """
+
     def display(self) -> str:
         delimiter = "-" * 11
         output = delimiter + "\n"
