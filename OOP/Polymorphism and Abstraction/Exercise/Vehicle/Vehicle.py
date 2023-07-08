@@ -16,11 +16,14 @@ class Vehicle(ABC):
 
 
 class Car(Vehicle):
+    AC_FUEL_CONS = 0.9
+
     def __init__(self, fuel_quantity, fuel_consumption):
         super().__init__(fuel_quantity, fuel_consumption)
 
     def drive(self, distance):
-        if (self.fuel_consumption + 0.9) * distance <= self.fuel_quantity:
+        fuel_needed = distance * (self.fuel_consumption + self.AC_FUEL_CONS)
+        if fuel_needed <= self.fuel_quantity:
             self.fuel_quantity -= (self.fuel_consumption + 0.9) * distance
 
     def refuel(self, fuel):
@@ -28,11 +31,14 @@ class Car(Vehicle):
 
 
 class Truck(Vehicle):
+    AC_FUEL_CONS = 1.6
+
     def __init__(self, fuel_quantity, fuel_consumption):
         super().__init__(fuel_quantity, fuel_consumption)
 
     def drive(self, distance):
-        if (self.fuel_consumption + 1.6) * distance <= self.fuel_quantity:
+        fuel_needed = distance * (self.fuel_consumption + self.AC_FUEL_CONS)
+        if fuel_needed <= self.fuel_quantity:
             self.fuel_quantity -= (self.fuel_consumption + 1.6) * distance
 
     def refuel(self, fuel):
