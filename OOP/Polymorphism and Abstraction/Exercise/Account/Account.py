@@ -1,24 +1,26 @@
+from typing import List
+
+
 class Account:
     def __init__(self, owner: str, amount: int = 0):
         self.owner = owner
         self.amount = amount
-        self._transactions = []
+        self._transactions: List[int] = []
+
+    @property
+    def balance(self) -> int:
+        return self.amount + sum(self._transactions)
+
+    def handle_transaction(self, transaction_amount):
+        if self.balance + transaction_amount < 0:
+            raise ValueError("sorry cannot go in debt!")
+        self._transactions.append(transaction_amount)
+        return f"New balance: {self.balance}"
 
     def add_transaction(self, amount):
         if not isinstance(amount, int):
             raise ValueError("please use int for amount")
-        self._transactions.append(amount)
-
-    @property
-    def balance(self):
-        return self.amount + sum(self._transactions)
-
-    @staticmethod
-    def validate_transaction(account, amount_to_add: int):
-        if account.balance + amount_to_add < 0:
-            raise ValueError("sorry cannot go in debt!")
-        account.add_transaction(amount_to_add)
-        return f"New balance: {account.balance}"
+        self.handle_transaction(amount)
 
     def __str__(self):
         return f"Account of {self.owner} with starting amount: {self.amount}"
