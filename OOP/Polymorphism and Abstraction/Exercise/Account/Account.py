@@ -14,14 +14,14 @@ class Account:
         return self.amount + sum(self._transactions)
 
     @staticmethod
-    def validate_transaction(account, amount_to_add):
+    def validate_transaction(account, amount_to_add: int):
         if account.balance + amount_to_add < 0:
             raise ValueError("sorry cannot go in debt!")
-        account.add._transaction(amount_to_add)
+        account.add_transaction(amount_to_add)
         return f"New balance: {account.balance}"
 
     def __str__(self):
-        return f"Account of {self.owner} with starting amount: {self.amount}."
+        return f"Account of {self.owner} with starting amount: {self.amount}"
 
     def __repr__(self):
         return f"Account({self.owner}, {self.amount})"
@@ -36,13 +36,13 @@ class Account:
         return self._transactions[idx]
 
     def __gt__(self, other):
-        return self.amount > other.amount
+        return self.balance > other.balance
 
     def __eq__(self, other):
-        return self.amount == other.amount
+        return self.balance == other.balance
 
     def __ge__(self, other):
-        return self.amount >= other.amount
+        return self.balance >= other.balance
 
     def __add__(self, other):
         new_owner = self.owner + "&" + other.owner
