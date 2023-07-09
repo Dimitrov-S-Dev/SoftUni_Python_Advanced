@@ -32,17 +32,17 @@ class Account:
     def __reversed__(self):
         return reversed(self._transactions)
 
-    def __getitem__(self, idx):
-        return self._transactions[idx]
-
     def __gt__(self, other):
         return self.balance > other.balance
+
+    def __ge__(self, other):
+        return self.balance >= other.balance
 
     def __eq__(self, other):
         return self.balance == other.balance
 
-    def __ge__(self, other):
-        return self.balance >= other.balance
+    def __getitem__(self, idx):
+        return self._transactions[idx]
 
     def __add__(self, other):
         new_owner = self.owner + "&" + other.owner
@@ -50,3 +50,4 @@ class Account:
         new_acc = Account(new_owner, new_amount)
         new_acc._transactions = self._transactions + other._transactions
         return new_acc
+
