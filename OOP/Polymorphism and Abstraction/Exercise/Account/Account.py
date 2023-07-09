@@ -32,6 +32,9 @@ class Account:
     def __len__(self):
         return len(self._transactions)
 
+    def __getitem__(self, idx: int):
+        return self._transactions[idx]
+
     def __reversed__(self):
         return reversed(self._transactions)
 
@@ -43,9 +46,6 @@ class Account:
 
     def __eq__(self, other):
         return self.balance == other.balance
-
-    def __getitem__(self, idx):
-        return self._transactions[idx]
 
     def __add__(self, other):
         new_owner = self.owner + "&" + other.owner
