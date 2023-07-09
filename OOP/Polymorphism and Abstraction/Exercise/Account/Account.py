@@ -11,16 +11,17 @@ class Account:
     def balance(self) -> int:
         return self.amount + sum(self._transactions)
 
-    def handle_transaction(self, transaction_amount):
+    def handle_transaction(self, transaction_amount: int) -> str:
         if self.balance + transaction_amount < 0:
             raise ValueError("sorry cannot go in debt!")
+
         self._transactions.append(transaction_amount)
         return f"New balance: {self.balance}"
 
-    def add_transaction(self, amount):
+    def add_transaction(self, amount: int) -> str:
         if not isinstance(amount, int):
             raise ValueError("please use int for amount")
-        self.handle_transaction(amount)
+        return self.handle_transaction(amount)
 
     def __str__(self):
         return f"Account of {self.owner} with starting amount: {self.amount}"
