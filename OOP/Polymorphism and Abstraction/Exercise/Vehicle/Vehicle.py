@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Vehicle(ABC):
-    def __init__(self, fuel_quantity, fuel_consumption):
+    def __init__(self, fuel_quantity: float, fuel_consumption: float):
         self.fuel_quantity = fuel_quantity
         self.fuel_consumption = fuel_consumption
 
