@@ -52,5 +52,5 @@ class Account:
         new_amount = self.amount + other.amount
         new_acc = Account(new_owner, new_amount)
         new_acc._transactions = self._transactions + other._transactions
-        return new_acc
 
+        return new_acc
