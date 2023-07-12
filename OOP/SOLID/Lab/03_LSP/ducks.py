@@ -4,21 +4,21 @@ from abc import abstractmethod, ABC
 class Duck(ABC):
     @staticmethod
     @abstractmethod
-    def quack(self):
+    def quack():
         pass
 
 
 class Fly(ABC):
     @staticmethod
     @abstractmethod
-    def fly(self):
+    def fly():
         pass
 
 
 class Walkable(ABC):
     @staticmethod
     @abstractmethod
-    def walk(self):
+    def walk():
         pass
 
 
