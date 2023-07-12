@@ -1,3 +1,17 @@
+class Cable(ABC):
+    @abstractmethod
+    def connect(self, d1, d2):
+        pa
+
+
+class HDMICable:
+    def connect(self, device1, device2):
+zz
+
+class RCACable:
+    def connnect(self, device1, device2):
+        return
+
 class EntertainmentDevice:
     def connect_to_device_via_hdmi_cable(self, device): pass
     def connect_to_device_via_rca_cable(self, device): pass
