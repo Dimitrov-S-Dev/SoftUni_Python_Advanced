@@ -2,20 +2,23 @@ from abc import abstractmethod, ABC
 
 
 class Duck(ABC):
+    @staticmethod
     @abstractmethod
     def quack(self):
         pass
 
 
-class Walkable(ABC):
+class Fly(ABC):
+    @staticmethod
     @abstractmethod
-    def walk(self):
+    def fly(self):
         pass
 
 
-class Flyable(ABC):
+class Walkable(ABC):
+    @staticmethod
     @abstractmethod
-    def fly(self):
+    def walk(self):
         pass
 
 
@@ -24,7 +27,7 @@ class RubberDuck(Duck):
         return "Squeek"
 
 
-class RobotDuck(Duck, Walkable, Flyable):
+class RobotDuck(Duck, Walkable, Fly):
     HEIGHT = 50
 
     def __init__(self):
@@ -44,7 +47,6 @@ class RobotDuck(Duck, Walkable, Flyable):
 
     def land(self):
         self.height = 0
-
 
 
 """
