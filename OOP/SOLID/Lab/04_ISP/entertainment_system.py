@@ -1,19 +1,17 @@
-from abc import ABC, abstractmethod
 
+class EthernetConnector:
 
-class EthernetConnector(ABC):
-    @abstractmethod
     def connect_device_via_ethernet_cable(self, device):
         pass
 
 
-class HDMIConnector(ABC):
+class HDMIConnector:
     def connect_device_via_hdmi_connector(self, device):
         pass
 
 
-class PowerConnector(ABC):
-    @abstractmethod
+class PowerConnector:
+
     def connect_device_to_power_outlet(self, device):
         pass
 
@@ -23,7 +21,7 @@ class RcaConnector:
         pass
 
 
-class Television(RcaConnector, HDMIConnector, PowerConnector, ABC):
+class Television(RcaConnector, HDMIConnector, PowerConnector):
     def connect_to_dvd(self, dvd_player):
         self.connect_to_device_via_rca_cable(dvd_player)
 
@@ -34,7 +32,7 @@ class Television(RcaConnector, HDMIConnector, PowerConnector, ABC):
         self.connect_device_to_power_outlet(self)
 
 
-class DVDPlayer(HDMIConnector, PowerConnector, ABC):
+class DVDPlayer(HDMIConnector, PowerConnector):
     def connect_to_tv(self, television):
         self.connect_device_via_hdmi_connector(television)
 
@@ -42,7 +40,7 @@ class DVDPlayer(HDMIConnector, PowerConnector, ABC):
         self.connect_device_to_power_outlet(self)
 
 
-class GameConsole(HDMIConnector, PowerConnector, EthernetConnector, ABC):
+class GameConsole(HDMIConnector, PowerConnector, EthernetConnector):
     def connect_to_tv(self, television):
         self.connect_device_via_hdmi_connector(television)
 
@@ -53,7 +51,7 @@ class GameConsole(HDMIConnector, PowerConnector, EthernetConnector, ABC):
         self.connect_device_to_power_outlet(self)
 
 
-class Router(PowerConnector, EthernetConnector, ABC):
+class Router(PowerConnector, EthernetConnector):
 
     def connect_to_tv(self, television):
         self.connect_device_via_ethernet_cable(television)
