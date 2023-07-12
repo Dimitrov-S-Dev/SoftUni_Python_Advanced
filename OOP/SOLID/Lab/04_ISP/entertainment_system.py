@@ -1,63 +1,50 @@
+from abc import ABC, abstractmethod
 
-class EthernetConnector:
 
-    def connect_device_via_ethernet_cable(self, device):
+class Cable(ABC):
+    @abstractmethod
+    def connect(self, d1, d2):
         pass
 
 
-class HDMIConnector:
-    def connect_device_via_hdmi_connector(self, device):
-        pass
+class HDMICable(Cable):
+    def connect(self, device1, device2):
+        return f"Connect {device1} to {device2}"
 
 
-class PowerConnector:
-
-    def connect_device_to_power_outlet(self, device):
-        pass
-
-
-class RcaConnector:
-    def connect_to_device_via_rca_cable(self, device):
-        pass
+class RcaCable(Cable):
+    def connect(self, device1, device2):
+        return f"Connect {device1} to {device2}"
 
 
-class Television(RcaConnector, HDMIConnector, PowerConnector):
-    def connect_to_dvd(self, dvd_player):
-        self.connect_to_device_via_rca_cable(dvd_player)
+class EthernetCable(Cable):
 
-    def connect_to_game_console(self, game_console):
-        self.connect_device_via_hdmi_connector(game_console)
-
-    def plug_in_power(self):
-        self.connect_device_to_power_outlet(self)
+    def connect(self, device1, device2):
+        return f"Connect {device1} to {device2}"
 
 
-class DVDPlayer(HDMIConnector, PowerConnector):
-    def connect_to_tv(self, television):
-        self.connect_device_via_hdmi_connector(television)
+class PowerOutlet(Cable):
 
-    def plug_in_power(self):
-        self.connect_device_to_power_outlet(self)
+    def connect(self, destination, _):
+        return f"Connect device to power"
 
 
-class GameConsole(HDMIConnector, PowerConnector, EthernetConnector):
-    def connect_to_tv(self, television):
-        self.connect_device_via_hdmi_connector(television)
-
-    def connect_to_router(self, router):
-        self.connect_device_via_ethernet_cable(router)
-
-    def plug_in_to_power(self):
-        self.connect_device_to_power_outlet(self)
+class DVDPlayer:
+    pass
 
 
-class Router(PowerConnector, EthernetConnector):
+class GameConsole:
+    pass
 
-    def connect_to_tv(self, television):
-        self.connect_device_via_ethernet_cable(television)
 
-    def plug_in_to_power(self):
-        self.connect_device_to_power_outlet(self)
+class Router:
+    pass
+
+
+class Television:
+    pass
+
+
 """
 class EntertainmentDevice:
     def connect_to_device_via_hdmi_cable(self, device): pass
