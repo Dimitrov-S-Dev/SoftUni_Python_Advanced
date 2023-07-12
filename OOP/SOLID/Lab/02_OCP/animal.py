@@ -29,6 +29,5 @@ def animal_sound(animals: list):
 animals = [Dog("Sharo"), Cat("Lady")]
 animal_sound(animals)
 
-## добавете ново животно и рефакторирайте кода да работи без да се налага да се правят промени по него
-## при добавяне на нови животни
+
 # animals = [Animal('cat'), Animal('dog'), Animal('chicken')]
