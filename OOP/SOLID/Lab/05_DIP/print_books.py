@@ -1,3 +1,7 @@
+
+"""
+
+
 class Book:
     def __init__(self, content: str):
         self.content = content
@@ -13,3 +17,4 @@ class Printer:
         formatter = Formatter()
         formatted_book = formatter.format(book)
         return formatted_book
+"""
