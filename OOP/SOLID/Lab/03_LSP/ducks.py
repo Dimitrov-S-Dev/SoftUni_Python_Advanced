@@ -23,7 +23,8 @@ class Walkable(ABC):
 
 
 class RubberDuck(Duck):
-    def quack(self):
+    @staticmethod
+    def quack():
         return "Squeek"
 
 
@@ -33,10 +34,12 @@ class RobotDuck(Duck, Walkable, Fly):
     def __init__(self):
         self.height = 0
 
-    def quack(self):
+    @staticmethod
+    def quack():
         return 'Robotic quacking'
 
-    def walk(self):
+    @staticmethod
+    def walk():
         return 'Robotic walking'
 
     def fly(self):
