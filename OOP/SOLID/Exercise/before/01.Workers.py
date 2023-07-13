@@ -18,11 +18,11 @@ class Manager:
         if self.worker is not None:
             self.worker.work()
 
+
 class SuperWorker:
 
     def work(self):
         print("I work very hard!!!")
-
 
 
 worker = Worker()
