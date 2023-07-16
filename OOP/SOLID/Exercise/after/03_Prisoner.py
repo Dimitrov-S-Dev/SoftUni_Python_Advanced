@@ -1,4 +1,4 @@
-import copy
+from copy import copy
 
 
 class Person:
@@ -19,7 +19,7 @@ class Prisoner(Person):
     PRISON_LOCATION = [3, 3]
 
     def __init__(self):
-        super().__init__(copy.copy(self.PRISON_LOCATION))
+        super().__init__(copy(self.PRISON_LOCATION))
         self.is_free = False
 
 
