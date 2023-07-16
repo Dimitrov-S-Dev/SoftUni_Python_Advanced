@@ -22,12 +22,6 @@ class SuperWorker(BaseWorker):
         print("I work very hard!!!")
 
 
-class MasterWorker(BaseWorker):
-    @staticmethod
-    def work():
-        print("working 24/7")
-
-
 class Manager:
 
     def __init__(self):
