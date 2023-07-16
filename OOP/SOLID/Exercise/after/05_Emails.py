@@ -11,6 +11,9 @@ class IContent(ABC):
 
 
 class MyContent(IContent):
+    def __init__(self, text):
+        super().__init__(text)
+
     def format(self):
         return '\n'.join(['<MyML>', self.text, '</MyML>'])
 
