@@ -16,3 +16,4 @@ class vowels:
         if current_element in self.vowels:
             return self.text[self.current_index]
         return self.__next__()
+
