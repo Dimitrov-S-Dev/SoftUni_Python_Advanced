@@ -2,21 +2,21 @@ from abc import ABC, abstractmethod
 import time
 
 
-class Work(ABC):
+class Workable(ABC):
     @staticmethod
     @abstractmethod
     def work():
         pass
 
 
-class Eat(ABC):
+class Eatable(ABC):
     @staticmethod
     @abstractmethod
     def eat():
         pass
 
 
-class Worker(Work, Eat):
+class Worker(Workable, Eatable):
     @staticmethod
     def work():
         print("I'm normal worker. I'm working.")
@@ -27,7 +27,7 @@ class Worker(Work, Eat):
         time.sleep(5)
 
 
-class SuperWorker(Work, Eat):
+class SuperWorker(Workable, Eatable):
 
     @staticmethod
     def work():
@@ -39,7 +39,7 @@ class SuperWorker(Work, Eat):
         time.sleep(3)
 
 
-class Robot(Work):
+class Robot(Workable):
 
     @staticmethod
     def work():
@@ -58,8 +58,8 @@ class Manager(ABC):
 
 class WorkManager(Manager):
     def set_worker(self, worker):
-        if not isinstance(worker, Work):
-            raise AssertionError(f"`worker` must able subclass of {Work}")
+        if not isinstance(worker, Workable):
+            raise AssertionError(f"`worker` must be subclass of {Workable}")
 
         self.worker = worker
 
@@ -69,8 +69,8 @@ class WorkManager(Manager):
 
 class BreakManager(Manager):
     def set_worker(self, worker):
-        if not isinstance(worker, Eat):
-            raise AssertionError(f"`worker` must able subclass of {Eat}")
+        if not isinstance(worker, Eatable):
+            raise AssertionError(f"`worker` must be subclass of {Eatable}")
 
         self.worker = worker
 
