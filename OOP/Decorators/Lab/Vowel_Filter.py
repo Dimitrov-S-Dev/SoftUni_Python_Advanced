@@ -16,3 +16,5 @@ def vowel_filter(func):
 def get_letters():
     return ["a", "b", "c", "d", "e"]
 
+
+print(get_letters())
