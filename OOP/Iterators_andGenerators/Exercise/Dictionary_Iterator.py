@@ -14,3 +14,8 @@ class dictionary_iter:
         self.idx += 1
         return result
 
+
+result = dictionary_iter({1: "1", 2: "2"})
+
+for x in result:
+    print(x)
