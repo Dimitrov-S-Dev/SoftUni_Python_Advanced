@@ -13,3 +13,8 @@ class sequence_repeat:
         result = self.seq[self.index % len(self.seq)]
         self.index += 1
         return result
+
+
+result = sequence_repeat('abc', 5)
+for item in result:
+    print(item, end='')
