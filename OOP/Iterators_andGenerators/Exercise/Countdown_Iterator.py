@@ -11,3 +11,8 @@ class countdown_iterator:
         result = self.count
         self.count -= 1
         return result
+
+
+iterator = countdown_iterator(10)
+for item in iterator:
+    print(item, end=" ")
