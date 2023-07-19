@@ -67,8 +67,10 @@ class TestCar(TestCase):
         self.assertEqual(str(ex.exception), "You don't have enough "
                                             "fuel to drive!")
 
-
-
+    def test_drive_with_correct_expect_fuel_amount_reduce(self):
+        self.car.fuel_amount = 75
+        self.car.drive(100)
+        self.assertEqual(self.car.fuel_amount, 60)
 
 
 if __name__ == "__main__":
