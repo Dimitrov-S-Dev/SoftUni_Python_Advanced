@@ -58,13 +58,15 @@ class TestInteger(TestCase):
         self.assertEqual(str(ve.exception), "Element is not Integer")
 
     def test_insert_correct(self):
-        self.integer_list.insert(0, 9)
-        self.assertEqual(self.integer_list.get_data(), [9, 1, 2, 3])
+        self.integer_list.insert(2, 4)
+        self.assertEqual(self.integer_list._IntegerList__data, [1, 2, 4, 3])
 
+    def test_get_biggest_correct(self):
+        self.assertEqual(3, self.integer_list.get_biggest())
 
-
-
-
+    def test_get_index_correct(self):
+        index = self.integer_list.get_index(1)
+        self.assertEqual(0, index)
 
 
 if __name__ == "__main__":
