@@ -1,4 +1,5 @@
-from project.booths.booth import Booth
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.booths.booth import \
+    Booth
 
 
 class PrivateBooth(Booth):

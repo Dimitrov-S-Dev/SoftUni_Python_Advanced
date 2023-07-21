@@ -1,11 +1,17 @@
 from typing import List
 
-from project.booths.booth import Booth
-from project.booths.open_booth import OpenBooth
-from project.booths.private_booth import PrivateBooth
-from project.delicacies.delicacy import Delicacy
-from project.delicacies.gingerbread import Gingerbread
-from project.delicacies.stolen import Stolen
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.booths.booth import \
+    Booth
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.booths.open_booth import \
+    OpenBooth
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.booths.private_booth import \
+    PrivateBooth
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.delicacies.delicacy import \
+    Delicacy
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.delicacies.gingerbread import \
+    Gingerbread
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.delicacies.stolen import \
+    Stolen
 
 
 class ChristmasPastryShopApp:
