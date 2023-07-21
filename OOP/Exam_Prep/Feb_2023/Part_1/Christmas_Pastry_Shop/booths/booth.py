@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from project.delicacies.delicacy import Delicacy
+from OOP.Exam_Prep.Feb_2023.Part_1.Christmas_Pastry_Shop.delicacies.delicacy import \
+    Delicacy
 
 
 class Booth(ABC):
