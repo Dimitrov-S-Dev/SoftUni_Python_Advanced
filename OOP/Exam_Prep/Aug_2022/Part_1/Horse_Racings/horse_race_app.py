@@ -1,7 +1,7 @@
-from project.horse_race import HorseRace
-from project.horse_specification.appaloosa import Appaloosa
-from project.horse_specification.thoroughbred import Thoroughbred
-from project.jockey import Jockey
+from OOP.Exam_Prep.Aug_2022.Part_1.Horse_Racings.horse_race import HorseRace
+from OOP.Exam_Prep.Aug_2022.Part_1.Horse_Racings.horse_specification.appaloosa import Appaloosa
+from OOP.Exam_Prep.Aug_2022.Part_1.Horse_Racings.horse_specification.thoroughbred import Thoroughbred
+from OOP.Exam_Prep.Aug_2022.Part_1.Horse_Racings.jockey import Jockey
 
 
 class HorseRaceApp:
