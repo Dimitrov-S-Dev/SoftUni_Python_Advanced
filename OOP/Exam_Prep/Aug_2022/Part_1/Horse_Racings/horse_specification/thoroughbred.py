@@ -1,4 +1,4 @@
-from project.horse_specification.horse import Horse
+from OOP.Exam_Prep.Aug_2022.Part_1.Horse_Racings.horse_specification.horse import Horse
 
 
 class Thoroughbred(Horse):
