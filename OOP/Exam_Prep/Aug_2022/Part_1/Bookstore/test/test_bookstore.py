@@ -1,5 +1,6 @@
 import unittest
-from project.bookstore import Bookstore
+
+from OOP.Exam_Prep.Aug_2022.Part_1.Bookstore.bookstore import Bookstore
 
 
 class TestLibrary(unittest.TestCase):
