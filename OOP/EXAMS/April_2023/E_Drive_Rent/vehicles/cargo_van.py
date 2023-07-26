@@ -1,4 +1,4 @@
-from project.vehicles.base_vehicle import BaseVehicle
+from OOP.EXAMS.April_2023.E_Drive_Rent.vehicles.base_vehicle import BaseVehicle
 
 
 class CargoVan(BaseVehicle):
