@@ -1,7 +1,7 @@
-from OOP.EXAMS.April_2023.E_Drive_Rent.route import Route
-from OOP.EXAMS.April_2023.E_Drive_Rent.user import User
-from OOP.EXAMS.April_2023.E_Drive_Rent.vehicles.cargo_van import CargoVan
-from OOP.EXAMS.April_2023.E_Drive_Rent.vehicles.passenger_car import PassengerCar
+from OOP.EXAMS.Re_Take_April_2023.E_Drive_Rent.route import Route
+from OOP.EXAMS.Re_Take_April_2023.E_Drive_Rent.user import User
+from OOP.EXAMS.Re_Take_April_2023.E_Drive_Rent.vehicles.cargo_van import CargoVan
+from OOP.EXAMS.Re_Take_April_2023.E_Drive_Rent.vehicles.passenger_car import PassengerCar
 
 
 class ManagingApp:
