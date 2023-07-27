@@ -1,7 +1,7 @@
-from project.core.drink_factory import DrinkFactory
-from project.core.food_factory import FoodFactory
-from project.core.table_factory import TableFactory
-from project.core.validator import Validator
+from OOP.EXAMS.August_2021.Baked_Delicacies.core.drink_factory import DrinkFactory
+from OOP.EXAMS.August_2021.Baked_Delicacies.core.food_factory import FoodFactory
+from OOP.EXAMS.August_2021.Baked_Delicacies.core.table_factory import TableFactory
+from OOP.EXAMS.August_2021.Baked_Delicacies.core.validator import Validator
 
 
 class Bakery:
