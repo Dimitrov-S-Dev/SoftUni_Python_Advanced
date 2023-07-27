@@ -1,4 +1,4 @@
-from project.baked_food.baked_food import BakedFood
+from OOP.EXAMS.August_2021.Baked_Delicacies.baked_food.baked_food import BakedFood
 
 
 class Cake(BakedFood):
