@@ -1,5 +1,5 @@
-from project.drink.tea import Tea
-from project.drink.water import Water
+from OOP.EXAMS.August_2021.Baked_Delicacies.drink.tea import Tea
+from OOP.EXAMS.August_2021.Baked_Delicacies.drink.water import Water
 
 
 class DrinkFactory:

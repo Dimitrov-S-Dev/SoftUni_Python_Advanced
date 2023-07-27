@@ -1,5 +1,5 @@
-from project.table.inside_table import InsideTable
-from project.table.outside_table import OutsideTable
+from OOP.EXAMS.August_2021.Baked_Delicacies.table.inside_table import InsideTable
+from OOP.EXAMS.August_2021.Baked_Delicacies.table.outside_table import OutsideTable
 
 
 class TableFactory:

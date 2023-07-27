@@ -1,5 +1,5 @@
-from project.baked_food.bread import Bread
-from project.baked_food.cake import Cake
+from OOP.EXAMS.August_2021.Baked_Delicacies.baked_food.bread import Bread
+from OOP.EXAMS.August_2021.Baked_Delicacies.baked_food.cake import Cake
 
 
 class FoodFactory:
