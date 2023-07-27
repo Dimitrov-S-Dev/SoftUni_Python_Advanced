@@ -1,4 +1,4 @@
-from project.table.table import Table
+from OOP.EXAMS.August_2021.Baked_Delicacies.table.table import Table
 
 
 class OutsideTable(Table):

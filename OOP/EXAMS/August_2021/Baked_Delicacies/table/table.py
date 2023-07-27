@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
-from project.baked_food.baked_food import BakedFood
-from project.core.validator import Validator
-from project.drink.drink import Drink
+from OOP.EXAMS.August_2021.Baked_Delicacies.baked_food.baked_food import BakedFood
+from OOP.EXAMS.August_2021.Baked_Delicacies.core.validator import Validator
+from OOP.EXAMS.August_2021.Baked_Delicacies.drink.drink import Drink
 
 
 class Table(ABC):
@@ -75,4 +75,3 @@ class Table(ABC):
             return f"Table: {self.table_number}\n"\
                    f"Type: {self.__class__.__name__}\n"\
                    f"Capacity: {self.capacity}"
-

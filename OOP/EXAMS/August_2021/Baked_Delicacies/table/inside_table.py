@@ -1,4 +1,4 @@
-from project.table.table import Table
+from OOP.EXAMS.August_2021.Baked_Delicacies.table.table import Table
 
 
 class InsideTable(Table):
@@ -13,6 +13,3 @@ class InsideTable(Table):
 
     def error_message(self):
         return f"Inside table's number must be between 1 and 50 inclusive!"
-
-
-
