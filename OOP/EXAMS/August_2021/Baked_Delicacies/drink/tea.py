@@ -1,4 +1,4 @@
-from project.drink.drink import Drink
+from OOP.EXAMS.August_2021.Baked_Delicacies.drink.drink import Drink
 
 
 class Tea(Drink):
