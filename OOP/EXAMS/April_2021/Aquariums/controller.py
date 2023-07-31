@@ -14,22 +14,20 @@ class Controller:
         self.fish_factory = FishFactory()
 
     def add_aquarium(self, aquarium_type: str, aquarium_name: str):
-
-        aquarium = self.aquarium_factory.create_aquarium(aquarium_type, aquarium_name)
-        if aquarium is None:
-            return f"Invalid aquarium type."
-
-        self.aquariums.append(aquarium)
-        return f"Successfully added {aquarium_type}."
+        try:
+            aquarium = self.aquarium_factory.create_aquarium(aquarium_type, aquarium_name)
+            self.aquariums.append(aquarium)
+            return f"Successfully added {aquarium_type}."
+        except ValueError as error:
+            return error
 
     def add_decoration(self, decoration_type: str):
-
-        if decoration_type not in ["Ornament", "Plant"]:
-            return "Invalid decoration type."
-
-        decoration = self.decoration_factory.create_decoration(decoration_type)
-        self.decorations_repository.decorations.append(decoration)
-        return f"Successfully added {decoration_type}."
+        try:
+            decoration = self.decoration_factory.create_decoration(decoration_type)
+            self.decorations_repository.add(decoration)
+            return f"Successfully added {decoration_type}."
+        except ValueError as error:
+            return error
 
     def insert_decoration(self, aquarium_name: str, decoration_type: str):
 
@@ -88,3 +86,4 @@ class Controller:
         for aquarium in self.aquariums:
             if aquarium.name == aquarium_name:
                 return aquarium
+
