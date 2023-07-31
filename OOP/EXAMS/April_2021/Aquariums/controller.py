@@ -30,7 +30,6 @@ class Controller:
             return error
 
     def insert_decoration(self, aquarium_name: str, decoration_type: str):
-
         decoration = self.decorations_repository.find_by_type(decoration_type)
         if decoration == "None":
             return f"There isn't a decoration of type {decoration_type}."
@@ -45,7 +44,6 @@ class Controller:
         return f"Successfully added {decoration_type} to {aquarium_name}."
 
     def add_fish(self, aquarium_name: str, fish_type: str, fish_name: str, fish_species: str, price: float):
-
         try:
             fish = self.fish_factory.create_fish(fish_type, fish_name, fish_species, price)
             aquarium = self.__find_aquarium_by_name(aquarium_name)
@@ -54,17 +52,13 @@ class Controller:
             return error
 
     def feed_fish(self, aquarium_name: str):
-
         aquarium = self.__find_aquarium_by_name(aquarium_name)
         aquarium.feed()
 
         return f"Fish fed: {len(aquarium.fish)}"
 
     def calculate_value(self, aquarium_name: str):
-
         aquarium = self.__find_aquarium_by_name(aquarium_name)
-        if aquarium is None:
-            return
 
         return aquarium.calculate_value()
 
