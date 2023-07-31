@@ -52,9 +52,6 @@ class Controller:
         if aquarium is None:
             return
 
-        if aquarium.fish_type != fish_type:
-            return f"Water not suitable."
-
         return aquarium.add_fish(fish)
 
     def feed_fish(self, aquarium_name: str):

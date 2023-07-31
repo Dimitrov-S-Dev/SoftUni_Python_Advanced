@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-
 from OOP.EXAMS.April_2021.Aquariums.core.validator import Validator
 
 
@@ -33,6 +32,8 @@ class BaseAquarium(ABC):
     def add_fish(self, fish):
         if self.capacity == len(self.fish):
             return "Not enough capacity."
+        if self.fish_type != fish.__class.__name__:
+            return f"Water not suitable."
         self.fish.append(fish)
         return f"Successfully added {self.fish_type} to {self.name}."
 
