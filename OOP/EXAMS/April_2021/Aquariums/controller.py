@@ -33,13 +33,13 @@ class Controller:
 
     def insert_decoration(self, aquarium_name: str, decoration_type: str):
 
-        index, decoration = self.__find_decoration_by_type(decoration_type)
+        decoration = self.__find_decoration_by_type(decoration_type)
         aquarium = self.__find_aquarium_by_name(aquarium_name)
         if aquarium is None:
             return
 
         aquarium.add_decoration(decoration)
-        self.decorations_repository.decorations.pop(index)
+        self.decorations_repository.decorations.remove(decoration)
         return f"Successfully added {decoration_type} to {aquarium_name}."
 
     def add_fish(self, aquarium_name: str, fish_type: str, fish_name: str, fish_species: str, price: float):
@@ -82,9 +82,9 @@ class Controller:
         return output.strip()
 
     def __find_decoration_by_type(self, decoration_type):
-        for index, decoration in enumerate(self.decorations_repository.decorations):
+        for decoration in self.decorations_repository.decorations:
             if decoration.__class__.__name__ == decoration_type:
-                return index, decoration
+                return decoration
         return f"There isn't a decoration of type {decoration_type}."
 
     def __find_aquarium_by_name(self, aquarium_name):
