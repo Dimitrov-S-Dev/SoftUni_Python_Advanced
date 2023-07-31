@@ -1,4 +1,4 @@
-from project.fish.base_fish import BaseFish
+from OOP.EXAMS.April_2021.Aquariums.fish.base_fish import BaseFish
 
 
 class FreshwaterFish(BaseFish):

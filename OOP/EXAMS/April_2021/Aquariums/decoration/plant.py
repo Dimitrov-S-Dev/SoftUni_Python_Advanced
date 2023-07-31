@@ -1,4 +1,4 @@
-from project.decoration.base_decoration import BaseDecoration
+from OOP.EXAMS.April_2021.Aquariums.decoration.base_decoration import BaseDecoration
 
 
 class Plant(BaseDecoration):

@@ -1,4 +1,4 @@
-from project.aquarium.base_aquarium import BaseAquarium
+from OOP.EXAMS.April_2021.Aquariums.aquarium.base_aquarium import BaseAquarium
 
 
 class FreshwaterAquarium(BaseAquarium):

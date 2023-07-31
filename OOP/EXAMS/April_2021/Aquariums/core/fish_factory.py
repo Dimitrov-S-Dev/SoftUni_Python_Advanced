@@ -1,5 +1,5 @@
-from project.fish.freshwater_fish import FreshwaterFish
-from project.fish.saltwater_fish import SaltwaterFish
+from OOP.EXAMS.April_2021.Aquariums.fish.freshwater_fish import FreshwaterFish
+from OOP.EXAMS.April_2021.Aquariums.fish.saltwater_fish import SaltwaterFish
 
 
 class FishFactory:

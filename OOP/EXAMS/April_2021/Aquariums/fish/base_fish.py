@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from project.core.validator import Validator
+
+from OOP.EXAMS.April_2021.Aquariums.core.validator import Validator
 
 
 class BaseFish(ABC):

@@ -1,5 +1,5 @@
-from project.aquarium.freshwater_aquarium import FreshwaterAquarium
-from project.aquarium.saltwater_aquarium import SaltwaterAquarium
+from OOP.EXAMS.April_2021.Aquariums.aquarium.freshwater_aquarium import FreshwaterAquarium
+from OOP.EXAMS.April_2021.Aquariums.aquarium.saltwater_aquarium import SaltwaterAquarium
 
 
 class AquariumFactory:

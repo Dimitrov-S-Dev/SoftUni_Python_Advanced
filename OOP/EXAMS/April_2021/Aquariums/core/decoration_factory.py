@@ -1,5 +1,5 @@
-from project.decoration.ornament import Ornament
-from project.decoration.plant import Plant
+from OOP.EXAMS.April_2021.Aquariums.decoration.ornament import Ornament
+from OOP.EXAMS.April_2021.Aquariums.decoration.plant import Plant
 
 
 class DecorationFactory:

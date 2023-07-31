@@ -1,7 +1,7 @@
-from project.core.aquarium_factory import AquariumFactory
-from project.core.decoration_factory import DecorationFactory
-from project.core.fish_factory import FishFactory
-from project.decoration.decoration_repository import DecorationRepository
+from OOP.EXAMS.April_2021.Aquariums.core.aquarium_factory import AquariumFactory
+from OOP.EXAMS.April_2021.Aquariums.core.decoration_factory import DecorationFactory
+from OOP.EXAMS.April_2021.Aquariums.core.fish_factory import FishFactory
+from OOP.EXAMS.April_2021.Aquariums.decoration.decoration_repository import DecorationRepository
 
 
 class Controller:
