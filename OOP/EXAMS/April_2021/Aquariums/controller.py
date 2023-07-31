@@ -31,20 +31,25 @@ class Controller:
 
     def insert_decoration(self, aquarium_name: str, decoration_type: str):
 
-        decoration = self.__find_decoration_by_type(decoration_type)
+        decoration = self.decorations_repository.find_by_type(decoration_type)
+        if decoration == "None":
+            return f"There isn't a decoration of type {decoration_type}."
+
+        self.decorations_repository.remove(decoration)
+
         aquarium = self.__find_aquarium_by_name(aquarium_name)
         if aquarium is None:
             return
-
         aquarium.add_decoration(decoration)
-        self.decorations_repository.decorations.remove(decoration)
+
         return f"Successfully added {decoration_type} to {aquarium_name}."
 
     def add_fish(self, aquarium_name: str, fish_type: str, fish_name: str, fish_species: str, price: float):
 
-        fish = self.fish_factory.create_fish(fish_type, fish_name, fish_species, price)
-        if fish is None:
-            return f"There isn't a fish of type {fish_type}."
+        try:
+            fish = self.fish_factory.create_fish(fish_type, fish_name, fish_species, price)
+        except ValueError as error:
+            return error
 
         aquarium = self.__find_aquarium_by_name(aquarium_name)
         if aquarium is None:
@@ -76,14 +81,8 @@ class Controller:
 
         return output.strip()
 
-    def __find_decoration_by_type(self, decoration_type):
-        for decoration in self.decorations_repository.decorations:
-            if decoration.__class__.__name__ == decoration_type:
-                return decoration
-        return f"There isn't a decoration of type {decoration_type}."
-
     def __find_aquarium_by_name(self, aquarium_name):
         for aquarium in self.aquariums:
             if aquarium.name == aquarium_name:
                 return aquarium
-
+        return None
