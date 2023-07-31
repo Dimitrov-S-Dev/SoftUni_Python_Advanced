@@ -5,6 +5,6 @@ class Validator:
             raise ValueError(message)
 
     @staticmethod
-    def raise_if_lte_to_zero(value: float, message):
+    def raise_if_lte_to_zero(value: float, message: str):
         if value <= 0:
             raise ValueError(message)
