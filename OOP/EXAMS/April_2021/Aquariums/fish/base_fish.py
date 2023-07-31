@@ -6,6 +6,7 @@ from OOP.EXAMS.April_2021.Aquariums.core.validator import Validator
 class BaseFish(ABC):
     SIZE_INCREMENT = 5
 
+    @abstractmethod
     def __init__(self, name: str, species: str, size: int, price: float):
         self.name = name
         self.species = species
@@ -45,6 +46,5 @@ class BaseFish(ABC):
             "Price cannot be equal to or below zero.")
         self.__price = value
 
-    @abstractmethod
     def eat(self):
         self.size += self.SIZE_INCREMENT
