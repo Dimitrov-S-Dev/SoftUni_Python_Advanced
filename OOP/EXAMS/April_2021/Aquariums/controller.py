@@ -48,22 +48,16 @@ class Controller:
 
         try:
             fish = self.fish_factory.create_fish(fish_type, fish_name, fish_species, price)
+            aquarium = self.__find_aquarium_by_name(aquarium_name)
+            return aquarium.add_fish(fish)
         except ValueError as error:
             return error
-
-        aquarium = self.__find_aquarium_by_name(aquarium_name)
-        if aquarium is None:
-            return
-
-        return aquarium.add_fish(fish)
 
     def feed_fish(self, aquarium_name: str):
 
         aquarium = self.__find_aquarium_by_name(aquarium_name)
-        if aquarium is None:
-            return
-
         aquarium.feed()
+
         return f"Fish fed: {len(aquarium.fish)}"
 
     def calculate_value(self, aquarium_name: str):
