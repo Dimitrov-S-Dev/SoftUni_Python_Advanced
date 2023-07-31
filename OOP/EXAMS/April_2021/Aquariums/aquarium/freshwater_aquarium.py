@@ -10,3 +10,4 @@ class FreshwaterAquarium(BaseAquarium):
     @property
     def fish_type(self):
         return "FreshwaterFish"
+
