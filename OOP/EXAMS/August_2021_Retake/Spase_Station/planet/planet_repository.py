@@ -1,4 +1,4 @@
-from project.planet.planet import Planet
+from OOP.EXAMS.August_2021_Retake.Spase_Station.planet.planet import Planet
 
 
 class PlanetRepository:

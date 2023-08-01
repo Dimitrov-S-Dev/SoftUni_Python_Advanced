@@ -1,7 +1,7 @@
-from project.astronaut.astronaut_repository import AstronautRepository
-from project.core.astronaut_factory import AstronautFactory
-from project.core.planet_factory import PlanetFactory
-from project.planet.planet_repository import PlanetRepository
+from OOP.EXAMS.August_2021_Retake.Spase_Station.astronaut.astronaut_repository import AstronautRepository
+from OOP.EXAMS.August_2021_Retake.Spase_Station.core.astronaut_factory import AstronautFactory
+from OOP.EXAMS.August_2021_Retake.Spase_Station.core.planet_factory import PlanetFactory
+from OOP.EXAMS.August_2021_Retake.Spase_Station.planet.planet_repository import PlanetRepository
 
 
 class SpaceStation:
