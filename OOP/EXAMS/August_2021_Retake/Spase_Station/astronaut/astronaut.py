@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from project.core.validator import Validator
+from OOP.EXAMS.August_2021_Retake.Spase_Station.core.validator import Validator
 
 
 class Astronaut(ABC):

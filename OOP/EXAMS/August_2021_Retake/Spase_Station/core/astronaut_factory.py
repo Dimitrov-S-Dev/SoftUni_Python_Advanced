@@ -1,6 +1,6 @@
-from project.astronaut.biologist import Biologist
-from project.astronaut.geodesist import Geodesist
-from project.astronaut.meteorologist import Meteorologist
+from OOP.EXAMS.August_2021_Retake.Spase_Station.astronaut.biologist import Biologist
+from OOP.EXAMS.August_2021_Retake.Spase_Station.astronaut.geodesist import Geodesist
+from OOP.EXAMS.August_2021_Retake.Spase_Station.astronaut.meteorologist import Meteorologist
 
 
 class AstronautFactory:

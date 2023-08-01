@@ -1,4 +1,4 @@
-from project.astronaut.astronaut import Astronaut
+from OOP.EXAMS.August_2021_Retake.Spase_Station.astronaut.astronaut import Astronaut
 
 
 class Biologist(Astronaut):
