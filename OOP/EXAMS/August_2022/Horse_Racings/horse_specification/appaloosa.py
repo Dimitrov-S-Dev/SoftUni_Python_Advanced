@@ -1,4 +1,4 @@
-from project.horse_specification.horse import Horse
+from OOP.EXAMS.August_2022.Horse_Racings.horse_specification.horse import Horse
 
 
 class Appaloosa(Horse):

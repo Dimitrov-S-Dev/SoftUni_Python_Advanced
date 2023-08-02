@@ -1,4 +1,4 @@
-from project.jockey import Jockey
+from OOP.EXAMS.August_2022.Horse_Racings.jockey import Jockey
 
 
 class JockeyFactory:

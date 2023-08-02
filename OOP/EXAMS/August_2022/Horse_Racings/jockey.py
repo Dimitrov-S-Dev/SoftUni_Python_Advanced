@@ -1,6 +1,4 @@
-from project.core.validator import Validator
-
-
+from OOP.EXAMS.August_2022.Horse_Racings.core.validator import Validator
 class Jockey:
     def __init__(self, name: str, age: int):
         self.name = name

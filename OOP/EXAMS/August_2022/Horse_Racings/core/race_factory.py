@@ -1,4 +1,4 @@
-from project.horse_race import HorseRace
+from OOP.EXAMS.August_2022.Horse_Racings.horse_race import HorseRace
 
 
 class RaceFactory:

@@ -1,5 +1,5 @@
-from project.horse_specification.appaloosa import Appaloosa
-from project.horse_specification.thoroughbred import Thoroughbred
+from OOP.EXAMS.August_2022.Horse_Racings.horse_specification.appaloosa import Appaloosa
+from OOP.EXAMS.August_2022.Horse_Racings.horse_specification.thoroughbred import Thoroughbred
 
 
 class HorseFactory:

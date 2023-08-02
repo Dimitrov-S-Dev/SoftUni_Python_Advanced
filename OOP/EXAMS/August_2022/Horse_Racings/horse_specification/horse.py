@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-
-from project.core.validator import Validator
+from OOP.EXAMS.August_2022.Horse_Racings.core.validator import Validator
 
 
 class Horse(ABC):

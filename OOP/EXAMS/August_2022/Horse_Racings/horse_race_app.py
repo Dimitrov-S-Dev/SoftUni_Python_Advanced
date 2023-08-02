@@ -1,6 +1,6 @@
-from project.core.horse_factory import HorseFactory
-from project.core.jockey_factory import JockeyFactory
-from project.core.race_factory import RaceFactory
+from OOP.EXAMS.August_2022.Horse_Racings.core.horse_factory import HorseFactory
+from OOP.EXAMS.August_2022.Horse_Racings.core.jockey_factory import JockeyFactory
+from OOP.EXAMS.August_2022.Horse_Racings.core.race_factory import RaceFactory
 
 
 class HorseRaceApp:
@@ -50,7 +50,6 @@ class HorseRaceApp:
         jockey = self.__find_jockey_by_name(jockey_name)
         if jockey is None:
             raise Exception(f"Jockey {jockey_name} could not be found!")
-
         try:
             horse = list(filter(lambda h: h.__class__.__name__ == horse_type and not h.is_taken, self.horses))[-1]
         except IndexError:
@@ -119,4 +118,3 @@ class HorseRaceApp:
             if race.race_type == race_type:
                 return race
         return None
-
