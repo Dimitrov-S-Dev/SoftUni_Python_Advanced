@@ -8,7 +8,7 @@ class Validator:
             raise ValueError(message)
 
     @staticmethod
-    def raise_if_lt_zero(value: float, message):
+    def raise_if_lt_zero(value, message: str):
         if value < 0:
             raise ValueError(message)
 
