@@ -1,4 +1,4 @@
-from OOP.EXAMS.December_2022.Concert_Tracker_App.band_members.musician import Musician
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.band_members.musician import Musician
 
 
 class Singer(Musician):

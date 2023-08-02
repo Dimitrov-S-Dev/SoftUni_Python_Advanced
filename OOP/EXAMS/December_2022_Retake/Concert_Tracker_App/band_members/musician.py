@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from OOP.EXAMS.December_2022.Concert_Tracker_App.core.validator import Validator
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.core.validator import Validator
 
 
 class Musician(ABC):

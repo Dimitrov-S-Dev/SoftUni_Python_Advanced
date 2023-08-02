@@ -1,4 +1,4 @@
-from OOP.EXAMS.December_2022.Concert_Tracker_App.concert import Concert
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.concert import Concert
 
 
 class ConcertFactory:

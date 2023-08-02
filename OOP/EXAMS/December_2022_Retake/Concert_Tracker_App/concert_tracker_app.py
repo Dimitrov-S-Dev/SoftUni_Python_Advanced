@@ -1,6 +1,6 @@
-from OOP.EXAMS.December_2022.Concert_Tracker_App.core.band_factory import BandFactory
-from OOP.EXAMS.December_2022.Concert_Tracker_App.core.concert_factory import ConcertFactory
-from OOP.EXAMS.December_2022.Concert_Tracker_App.core.musician_factory import MusicianFactory
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.core.band_factory import BandFactory
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.core.concert_factory import ConcertFactory
+from OOP.EXAMS.December_2022_Retake.Concert_Tracker_App.core.musician_factory import MusicianFactory
 
 
 class ConcertTrackerApp:
