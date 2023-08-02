@@ -1,4 +1,4 @@
-from project.meals.meal import Meal
+from OOP.EXAMS.August_2022.Food_Orders_App.meals.meal import Meal
 
 
 class Dessert(Meal):

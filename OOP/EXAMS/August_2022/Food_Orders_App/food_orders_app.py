@@ -1,5 +1,5 @@
-from project.client import Client
-from project.meals.meal import Meal
+from OOP.EXAMS.August_2022.Food_Orders_App.client import Client
+from OOP.EXAMS.August_2022.Food_Orders_App.meals.meal import Meal
 
 
 class FoodOrdersApp:
@@ -58,7 +58,8 @@ class FoodOrdersApp:
             curr_meal.quantity -= quantity
             client.meals_names.append(meal_name)
 
-        return f"Client {client.phone_number} successfully ordered {', '.join(client.meals_names)} for {client.bill:.2f}lv."
+        return f"Client {client.phone_number} successfully ordered {', '.join(client.meals_names)} " \
+               f"for {client.bill:.2f}lv."
 
     def cancel_order(self, client_phone_number: str):
 
@@ -87,7 +88,8 @@ class FoodOrdersApp:
         client.bill = 0.0
         client.sub_order = {}
         client.meals_names = []
-        return f"Receipt #{self.receipt_id} with total amount of {total_paid_money:.2f} was successfully paid for {client.phone_number}."
+        return f"Receipt #{self.receipt_id} with total amount of {total_paid_money:.2f} was successfully paid for " \
+               f"{client.phone_number}."
 
     def __str__(self):
         return f"Food Orders App has {len(self.menu)} meals on the menu and {len(self.clients_list)} clients."
@@ -107,7 +109,3 @@ class FoodOrdersApp:
             if meal.name == name:
                 return meal
         raise Exception(f"{name} is not on the menu!")
-
-
-
-
