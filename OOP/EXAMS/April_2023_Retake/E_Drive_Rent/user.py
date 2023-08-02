@@ -1,4 +1,4 @@
-from project.core.validator import Validator
+from OOP.EXAMS.April_2023_Retake.E_Drive_Rent.core.validator import Validator
 
 
 class User:

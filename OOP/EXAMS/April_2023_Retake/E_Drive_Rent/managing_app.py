@@ -1,3 +1,6 @@
+from OOP.EXAMS.April_2023_Retake.E_Drive_Rent.core.route_factory import RouteFactory
+from OOP.EXAMS.April_2023_Retake.E_Drive_Rent.core.user_factory import UserFactory
+from OOP.EXAMS.April_2023_Retake.E_Drive_Rent.core.vehicle_factory import VehicleFactory
 
 
 class ManagingApp:
@@ -91,7 +94,6 @@ class ManagingApp:
             output += str(user) + "\n"
         return output.strip()
 
-
     def __find_user_by_driving_license(self, driving_license_number):
         for user in self.users:
             if user.driving_license_number == driving_license_number:
@@ -120,8 +122,3 @@ class ManagingApp:
     def __sort_vehicle_by_damage(self, count):
         vehicles = sorted(filter(lambda v: v.is_damaged, self.vehicles), key=lambda v: (v.brand, v.model))[:count]
         return vehicles
-
-
-
-
-
