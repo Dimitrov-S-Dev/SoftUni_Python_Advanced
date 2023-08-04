@@ -1,4 +1,4 @@
-from project.car.car import Car
+from OOP.EXAMS.December_2021.Christmas_Races.car.car import Car
 
 
 class SportsCar(Car):

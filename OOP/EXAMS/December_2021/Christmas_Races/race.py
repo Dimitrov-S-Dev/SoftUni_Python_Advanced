@@ -1,4 +1,4 @@
-from project.core.validator import Validator
+from OOP.EXAMS.December_2021.Christmas_Races.core.validator import Validator
 
 
 class Race:

@@ -1,5 +1,5 @@
-from project.car.muscle_car import MuscleCar
-from project.car.sports_car import SportsCar
+from OOP.EXAMS.December_2021.Christmas_Races.car.muscle_car import MuscleCar
+from OOP.EXAMS.December_2021.Christmas_Races.car.sports_car import SportsCar
 
 
 class CarFactory:

@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from project.core.validator import Validator
+
+from OOP.EXAMS.December_2021.Christmas_Races.core.validator import Validator
 
 
 class Car(ABC):
@@ -46,4 +47,3 @@ class Car(ABC):
             self.max_speed_limit,
             self.invalid_speed_limit_message())
         self.__speed_limit = value
-
