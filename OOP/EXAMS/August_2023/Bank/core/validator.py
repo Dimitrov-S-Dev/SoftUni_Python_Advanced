@@ -38,6 +38,11 @@ class Validator:
             raise ValueError(message)
 
     @staticmethod
+    def raise_if_value_is_ne_value(value, required_number, message: str):
+        if value != required_number:
+            raise ValueError(message)
+
+    @staticmethod
     def raise_if_value_not_in_list(value: str, available: List[str], message: str):
         if value not in available:
             raise ValueError(message)
