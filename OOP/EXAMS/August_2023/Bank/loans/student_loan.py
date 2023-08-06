@@ -1,5 +1,5 @@
-from project.clients.student import Student
-from project.loans.base_loan import BaseLoan
+from OOP.EXAMS.August_2023.Bank.clients.student import Student
+from OOP.EXAMS.August_2023.Bank.loans.base_loan import BaseLoan
 
 
 class StudentLoan(BaseLoan):

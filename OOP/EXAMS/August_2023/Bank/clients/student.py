@@ -1,4 +1,4 @@
-from project.clients.base_client import BaseClient
+from OOP.EXAMS.August_2023.Bank.clients.base_client import BaseClient
 
 
 class Student(BaseClient):

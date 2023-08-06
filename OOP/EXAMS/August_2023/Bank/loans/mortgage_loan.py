@@ -1,5 +1,5 @@
-from project.clients.adult import Adult
-from project.loans.base_loan import BaseLoan
+from OOP.EXAMS.August_2023.Bank.clients.adult import Adult
+from OOP.EXAMS.August_2023.Bank.loans.base_loan import BaseLoan
 
 
 class MortgageLoan(BaseLoan):

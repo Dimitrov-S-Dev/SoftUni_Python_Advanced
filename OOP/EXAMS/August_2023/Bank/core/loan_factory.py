@@ -1,5 +1,5 @@
-from project.loans.mortgage_loan import MortgageLoan
-from project.loans.student_loan import StudentLoan
+from OOP.EXAMS.August_2023.Bank.loans.mortgage_loan import MortgageLoan
+from OOP.EXAMS.August_2023.Bank.loans.student_loan import StudentLoan
 
 
 class LoanFactory:

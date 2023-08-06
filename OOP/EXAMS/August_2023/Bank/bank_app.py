@@ -1,5 +1,5 @@
-from project.core.client_factory import ClientFactory
-from project.core.loan_factory import LoanFactory
+from OOP.EXAMS.August_2023.Bank.core.client_factory import ClientFactory
+from OOP.EXAMS.August_2023.Bank.core.loan_factory import LoanFactory
 
 
 class BankApp:
@@ -106,4 +106,3 @@ class BankApp:
             if client.client_id == client_id:
                 return client
         return None
-

@@ -1,5 +1,5 @@
-from project.clients.adult import Adult
-from project.clients.student import Student
+from OOP.EXAMS.August_2023.Bank.clients.adult import Adult
+from OOP.EXAMS.August_2023.Bank.clients.student import Student
 
 
 class ClientFactory:
@@ -9,4 +9,3 @@ class ClientFactory:
         if client_type not in self.VALID_TYPES:
             raise ValueError("Invalid client type!")
         return self.VALID_TYPES[client_type](client_name, client_id, income)
-
